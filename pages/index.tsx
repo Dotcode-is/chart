@@ -11,7 +11,7 @@ const Chart = dynamic(() => import('react-apexcharts'), {
 
 const Home: NextPage = () => {
   const year = endOfMonth(startOfYear(new Date()))
-  // Get an array of months from Feb/Mar to Feb
+  // Array of months from Feb/Mar to current month Feb
   const monthArray = Array.from({ length: 13 }, (_, i) => {
     return addMonths(new Date(year), i - 11)
       .toISOString()
@@ -51,11 +51,6 @@ const Home: NextPage = () => {
             },
             tooltip: {
               enabled: false
-              // theme: 'blue',
-              // style: {
-              //   // fontSize?: string
-              //   fontFamily: theme.fonts.body
-              // }
             },
             xaxis: {
               type: 'datetime',
